@@ -16,7 +16,7 @@ kaldi:
 	ln -s $(abspath $(KALDI)) kaldi
 else
 kaldi:
-	git clone https://github.com/anjaleeps/kaldi.git
+	git clone https://github.com/kaldi-asr/kaldi.git
 	cd kaldi/tools; ./extras/install_mkl.sh; $(MAKE)
 	cd kaldi/src; ./configure --shared --use-cuda=no; $(MAKE) depend; $(MAKE) all
 endif
